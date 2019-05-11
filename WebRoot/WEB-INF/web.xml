@@ -8,8 +8,32 @@
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>LoginServlet</servlet-class>
+    <servlet-name>DlServlet</servlet-name>
+    <servlet-class>DlServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PdServlet</servlet-name>
+    <servlet-class>PdServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OutServlet</servlet-name>
+    <servlet-class>OutServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InServlet</servlet-name>
+    <servlet-class>InServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>sbServlet</servlet-name>
+    <servlet-class>sbServlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
@@ -17,48 +41,35 @@
     <servlet-name>CgServlet</servlet-name>
     <servlet-class>CgServlet</servlet-class>
   </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>SbServlet</servlet-name>
-    <servlet-class>SbServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>CookieServlet</servlet-name>
-    <servlet-class>CookieServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>ReadCookie</servlet-name>
-    <servlet-class>ReadCookie</servlet-class>
-  </servlet>
+
 
 
 
 
 
   <servlet-mapping>
-    <servlet-name>LoginServlet</servlet-name>
-    <url-pattern>/log</url-pattern>
+    <servlet-name>DlServlet</servlet-name>
+    <url-pattern>/dl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PdServlet</servlet-name>
+    <url-pattern>/pd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OutServlet</servlet-name>
+    <url-pattern>/out</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InServlet</servlet-name>
+    <url-pattern>/in</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>sbServlet</servlet-name>
+    <url-pattern>/sb</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>CgServlet</servlet-name>
     <url-pattern>/cg</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>SbServlet</servlet-name>
-    <url-pattern>/sb</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>CookieServlet</servlet-name>
-    <url-pattern>/cook</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ReadCookie</servlet-name>
-    <url-pattern>/read</url-pattern>
   </servlet-mapping>	
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>

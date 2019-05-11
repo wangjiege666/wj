@@ -2,28 +2,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
-public class ReadCookie extends HttpServlet {
-
-	/**
-	 * Constructor of the object.
-	 */
-	public ReadCookie() {
-		super();
-	}
-
-	/**
-	 * Destruction of the servlet. <br>
-	 */
-	public void destroy() {
-		super.destroy(); // Just puts "destroy" string in log
-		// Put your code here
-	}
+public class DlServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -35,27 +20,30 @@ public class ReadCookie extends HttpServlet {
 	 * @throws ServletException if an error occurred
 	 * @throws IOException if an error occurred
 	 */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setCharacterEncoding("UTF-8");//设置输出内容的编码格式
-        response.setContentType("text/plain");//设置输出的文件类型
-        PrintWriter out = response.getWriter();
-        Cookie[] cookies=request.getCookies();//获取请求中所有的Cookie
-        if(cookies!=null){
-            for(int i=0;i<cookies.length;i++){
-                out.println("Cookie Name:"+cookies[i].getName());//输出Cookie的名字
-                out.println("Cookie Value:"+cookies[i].getValue());//输出Cookie的值
-            }
-        }else{
-            out.println("No Cookies");
+        response.setCharacterEncoding("UTF-8");//设置字符编码
+       response.setContentType("text/html");//设置响应类型
+            PrintWriter out = response.getWriter();
+            out.println("<!DOCTYPE html>");
+            out.println("<HTML>");
+            out.println("<HEAD><TITLE>登录页面</TITLE>" +
+            "<meta http-equiv='content-type' content='text/html; charset=UTF-8'></HEAD>");
+            out.println(" <BODY>");
+            out.print(
+                    "<form id='form1' name='form1' method='get' action='pd'>" +
+                    "<label for='textfield'>用户名：</label>" +
+                    "<input type='text' name='userName' id='userName' /><br/> " +
+                    "<label for='textfield'>密&nbsp;&nbsp;&nbsp;码：</label> " +
+                    "<input type='text' name='password' id='password' /><br/>" +
+                    "<input type='submit' name='button' id='button' value='提交' />" +
+                    "</form>");
+            out.println("  </BODY>");
+            out.println("</HTML>");
+            out.flush();
+            out.close();
         }
-        
-        Cookie cookie = new Cookie("userName", "zhangsan");
-        cookie.setMaxAge(0);
-        response.addCookie(cookie);
-        out.flush();
-        out.close();
-    }
+    
 
 	/**
 	 * The doPost method of the servlet. <br>
@@ -83,15 +71,6 @@ public class ReadCookie extends HttpServlet {
 		out.println("</HTML>");
 		out.flush();
 		out.close();
-	}
-
-	/**
-	 * Initialization of the servlet. <br>
-	 *
-	 * @throws ServletException if an error occurs
-	 */
-	public void init() throws ServletException {
-		// Put your code here
 	}
 
 }

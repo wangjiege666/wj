@@ -10,21 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 public class CgServlet extends HttpServlet {
 
 	/**
-	 * Constructor of the object.
-	 */
-	public CgServlet() {
-		super();
-	}
-
-	/**
-	 * Destruction of the servlet. <br>
-	 */
-	public void destroy() {
-		super.destroy(); // Just puts "destroy" string in log
-		// Put your code here
-	}
-
-	/**
 	 * The doGet method of the servlet. <br>
 	 *
 	 * This method is called when a form has its tag value method equals to get.
@@ -37,15 +22,21 @@ public class CgServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		response.setCharacterEncoding("UTF-8");// 设置字符编码
+		response.setContentType("text/html");// 设置响应类型
+		
+		
+		String userName=request.getParameter("userName");//获取用户名
+        String password=request.getParameter("password");//获取密码
+        
+        
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
 		out.println("  <BODY>");
-		out.print("    This is ");
-		out.print(this.getClass());
-		out.println(", using the GET method");
+		 out.println("欢迎："+userName+"访问本网页！");
 		out.println("  </BODY>");
 		out.println("</HTML>");
 		out.flush();
@@ -64,27 +55,17 @@ public class CgServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		 response.setCharacterEncoding("UTF-8");
+
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
-		out.println(" <HEAD><TITLE>A Servlet</TITLE></HEAD>");
-		out.println("<BODY>");		
-		out.println("欢迎"+ request.getParameter("name") +"登陆成功");
-		out.println("</BODY>");
+		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
+		out.println("  <BODY>");
+		out.println("  </BODY>");
 		out.println("</HTML>");
 		out.flush();
 		out.close();
-	}
-
-	/**
-	 * Initialization of the servlet. <br>
-	 *
-	 * @throws ServletException if an error occurs
-	 */
-	public void init() throws ServletException {
-		// Put your code here
 	}
 
 }

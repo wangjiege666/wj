@@ -2,28 +2,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class CookieServlet extends HttpServlet {
-
-	/**
-	 * Constructor of the object.
-	 */
-	public CookieServlet() {
-		super();
-	}
-
-	/**
-	 * Destruction of the servlet. <br>
-	 */
-	public void destroy() {
-		super.destroy(); // Just puts "destroy" string in log
-		// Put your code here
-	}
+public class InServlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -35,16 +19,23 @@ public class CookieServlet extends HttpServlet {
 	 * @throws ServletException if an error occurred
 	 * @throws IOException if an error occurred
 	 */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setCharacterEncoding("UTF-8");//设置输出内容的编码格式
-        response.setContentType("text/plain");//设置输出的文件类型
-        PrintWriter out=response.getWriter();
-        Cookie cookie=new Cookie("userName", "zhangsan");
-        response.addCookie(cookie);
-        cookie.setMaxAge(30);
-        out.println("创建Cookie完成！");
-  }
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8");// 设置字符编码
+		response.setContentType("text/html");// 设置响应类型
+
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+		out.println("<HTML>");
+		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
+		out.println("  <BODY>");
+		 out.println("您还没有登录本系统，请<a href='dl'>点击此处</a>进入登录页面<br/>");
+		out.println("  </BODY>");
+		out.println("</HTML>");
+		out.flush();
+		out.close();
+	}
 
 	/**
 	 * The doPost method of the servlet. <br>
@@ -58,6 +49,8 @@ public class CookieServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8");// 设置字符编码
+		response.setContentType("text/html");// 设置响应类型
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
@@ -65,22 +58,11 @@ public class CookieServlet extends HttpServlet {
 		out.println("<HTML>");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
 		out.println("  <BODY>");
-		out.print("    This is ");
-		out.print(this.getClass());
-		out.println(", using the POST method");
+		 out.println("您还没有登录本系统，请<a href='dl'>点击此处</a>进入登录页面<br/>");
 		out.println("  </BODY>");
 		out.println("</HTML>");
 		out.flush();
 		out.close();
-	}
-
-	/**
-	 * Initialization of the servlet. <br>
-	 *
-	 * @throws ServletException if an error occurs
-	 */
-	public void init() throws ServletException {
-		// Put your code here
 	}
 
 }

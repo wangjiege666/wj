@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="wj">
+    <wb-module deploy-name="wangjie1">
         <wb-resource deploy-path="/" source-path="/WebRoot"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="/wj"/>
-        <property name="java-output-path" value="/wj/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="/wangjie1"/>
+        <property name="java-output-path" value="/wangjie1/WebRoot/WEB-INF/classes"/>
     </wb-module>
 </project-modules>
